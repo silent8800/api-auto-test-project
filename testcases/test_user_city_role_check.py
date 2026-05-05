@@ -1,17 +1,19 @@
 from common.request_util import send_get
 from common.db_util import query_one
-# 按 city + role 查数据库校验
+
+
+# 按 city + role 多条件查询并进行数据库校验
 
 
 def test_user_city_role_check():
-    url = "https://httpbin.org/get"
+    url = "/get"
 
     params = {
         "city": "Taipei",
         "role": "tester"
     }
     # 使用封装的 GET 请求方法发接口请求
-    res = send_get(url, params=params)
+    res = send_get("/get", params=params)
 
     api_data = res.json()
     # 3. 从接口响应里提取 city和role

@@ -1,7 +1,7 @@
 from common.request_util import send_get
 from common.db_util import query_one
 
-
+# 用户信息接口 + 数据库校验测试用例
 def test_user_info_by_mysql():
     # 1. 准备接口请求参数
     params = {
@@ -10,7 +10,7 @@ def test_user_info_by_mysql():
     }
 
     # 2. 发送 GET 请求
-    res = send_get("https://httpbin.org/get", params=params)
+    res = send_get("/get", params=params)
 
     # 3. 断言状态码
     assert res.status_code == 200

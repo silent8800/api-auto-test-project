@@ -1,10 +1,10 @@
 from common.request_util import send_get
 from common.db_util import query_one
 
-
+#接口返回数据与 MySQL 数据库数据一致性校验
 
 def test_api_mysql_user_by_util():
-    url = "https://httpbin.org/get"
+    url = "/get"
 # 2. params 传 username=alice, id=1
     params = {
         "username": "alice",
@@ -12,7 +12,7 @@ def test_api_mysql_user_by_util():
     }
 # 1. 使用 send_get() 请求 https://httpbin.org/get
     #请求封装
-    res = send_get(url, params=params)
+    res = send_get("/get", params=params)
 
     api_data = res.json()
 # 3. 从接口响应里提取 username 和 id

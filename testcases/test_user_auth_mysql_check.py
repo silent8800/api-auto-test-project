@@ -1,11 +1,11 @@
 from common.request_util import send_get
 from common.db_util import query_one
 
-# 带token请求 + MySQL一致性校验
+# 校验token / header是否携带成功
 
 def test_user_auth_mysql_check(auth_headers):
     # 1. 准备接口地址和参数
-    url = "https://httpbin.org/get"
+    url = "/get"
 
     params = {
         "username": "alice",
@@ -13,7 +13,7 @@ def test_user_auth_mysql_check(auth_headers):
     }
 
     # 2. 使用封装的 send_get，带上 conftest.py 里的 auth_headers
-    res = send_get(url, params=params, headers=auth_headers)
+    res = send_get("/get", params=params, headers=auth_headers)
 
     api_data = res.json()
 
