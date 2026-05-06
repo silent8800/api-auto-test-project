@@ -1,11 +1,11 @@
 .venv/
+.idea/
+
 __pycache__/
 *.pyc
-.idea/
 .pytest_cache/
-reports/
-reports/report.html
+
 logs/
 allure-results/
-__pycache__/
-.pytest_cache/
+
+reports/
