@@ -8,7 +8,7 @@ def test_user_auth_mysql_check(auth_headers):
     url = "/get"
 
     params = {
-        "username": "alice",
+        "username": "api_test_01",
         "id": "1"
     }
 

@@ -5,7 +5,7 @@ from common.db_util import query_one
 def test_user_info_by_mysql():
     # 1. 准备接口请求参数
     params = {
-        "username": "alice",
+        "username": "api_test_01",
         "id": 1
     }
 

@@ -7,7 +7,7 @@ def test_api_mysql_user_by_util():
     url = "/get"
 # 2. params 传 username=alice, id=1
     params = {
-        "username": "alice",
+        "username": "api_test_01",
         "id": "1"
     }
 # 1. 使用 send_get() 请求 https://httpbin.org/get
