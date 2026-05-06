@@ -1,20 +1,24 @@
 import pytest
+import allure
 from common.request_util import send_get
 from common.db_util import query_one
 
 
+@allure.feature("用户管理模块")
+@allure.story("用户信息查询")
+@allure.title("用户信息查询接口数据驱动测试")
 @pytest.mark.parametrize(
-    "username, id, city, role",
+    "username, user_id, city, role",
     [
         ("data_user_01", 21, "Taipei", "tester"),
         ("data_user_02", 22, "Taichung", "developer"),
         ("data_user_03", 23, "Kaohsiung", "admin"),
     ]
 )
-def test_user_info_data_driven(username, id, city, role):
+def test_user_info_data_driven(username, user_id, city, role):
     params = {
         "username": username,
-        "id": id,
+        "id": user_id,
         "city": city,
         "role": role
     }
@@ -30,7 +34,7 @@ def test_user_info_data_driven(username, id, city, role):
     api_role = data["args"]["role"]
 
     sql = """
-        select id, username, city, role
+        select id, username, city, role, status
         from user
         where username = %s and id = %s
     """

@@ -1,0 +1,20 @@
+[32mINFO    [0m api_auto_test:request_util.py:15 发送GET请求，url=https://httpbin.org/get, params={'username': 'api_test_01', 'id': '1'}, headers=None
+[32mINFO    [0m api_auto_test:request_util.py:20 响应状态码：200
+[32mINFO    [0m api_auto_test:request_util.py:21 响应内容：{
+  "args": {
+    "id": "1", 
+    "username": "api_test_01"
+  }, 
+  "headers": {
+    "Accept": "*/*", 
+    "Accept-Encoding": "gzip, deflate", 
+    "Host": "httpbin.org", 
+    "User-Agent": "python-requests/2.33.1", 
+    "X-Amzn-Trace-Id": "Root=1-69fb31b7-314c98e7660924d3506d4b0b"
+  }, 
+  "origin": "61.224.100.37", 
+  "url": "https://httpbin.org/get?username=api_test_01&id=1"
+}
+
+[32mINFO    [0m api_auto_test:db_util.py:14 执行SQL：select id, username, city, role, status from user where username = %s and id = %s, 参数：('api_test_01', 1)
+[32mINFO    [0m api_auto_test:db_util.py:25 SQL查询结果：{'id': 1, 'username': 'api_test_01', 'city': 'Taipei', 'role': 'tester', 'status': 1}
