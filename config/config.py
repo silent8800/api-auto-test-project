@@ -1,6 +1,3 @@
-
-
-
 # config/config.py
 # 用来统一管理接口基础地址。
 BASE_URL = "https://httpbin.org"
